@@ -1,5 +1,7 @@
 # InspireVLA
 
+[InspireVLA-Fast]()
+
 Official implementation of the paper "[Think Before You Act: Vision-Language-Action Models with Intrinsic Spatial Reasoning]()".
 
 > **Note**: We are doing our best to improve this work. If you have any questions or suggestions, please feel free to create an issue in this repo or contact us at shihan.wu.koorye@outlook.com.
@@ -10,7 +12,7 @@ Official implementation of the paper "[Think Before You Act: Vision-Language-Act
 
 ## Introduction
 
-> **Abstract** Leveraging pretrained Vision-Language Models (VLMs) to map language instruction and visual observations to raw low-level actions, Vision-Language-Action models (VLAs) hold great promise for achieving general-purpose robotic systems. Despite their advancements, existing VLAs tend to spuriously correlate task-irrelevant visual features with actions, limiting their generalization capacity beyond the training data. To address this challenge, we propose \textbf{Intrinsic Spatial Reasoning (InSpire)}, which mitigates the adverse effects of spurious correlations by boosting the spatial reasoning ability of VLAs. Specifically, InSpire redirects the model's attention to task-relevant visual clues by simply appending the question *“In which direction is the [object] relative to the robot”* before the language instruction and aligning the VLA's answer *“right/left/up/down/front/back/grasp”* and predicted actions with the ground-truth. Notably, InSpire can be employed as a \textit{plugin} to enhance existing autoregressive VLAs, requiring no extra data or interaction with other large models. Extensive experimental results in both simulation and real-world environments demonstrate the effectiveness and flexibility of our approach.
+> **Abstract** Leveraging pretrained Vision-Language Models (VLMs) to map language instruction and visual observations to raw low-level actions, Vision-Language-Action models (VLAs) hold great promise for achieving general-purpose robotic systems. Despite their advancements, existing VLAs tend to spuriously correlate task-irrelevant visual features with actions, limiting their generalization capacity beyond the training data. To address this challenge, we propose \textbf{Intrinsic Spatial Reasoning (InSpire)}, which mitigates the adverse effects of spurious correlations by boosting the spatial reasoning ability of VLAs. Specifically, InSpire redirects the model's attention to task-relevant visual clues by simply appending the question *“In which direction is the [object] relative to the robot”* before the language instruction and aligning the VLA's answer *“right / left / up / down / front / back / grasp”* and predicted actions with the ground-truth. Notably, InSpire can be employed as a \textit{plugin} to enhance existing autoregressive VLAs, requiring no extra data or interaction with other large models. Extensive experimental results in both simulation and real-world environments demonstrate the effectiveness and flexibility of our approach.
 
 ![Overview](examples/overview.png)
 ![Method](examples/method.png)
@@ -55,7 +57,23 @@ Official implementation of the paper "[Think Before You Act: Vision-Language-Act
 
 **FAST**
 
+| Seen<br>Cookies Towel | Seen<br>Left Bowl on Middle Bowl | Seen<br>Blue Cup Plate | Seen<br>Pull Bottom Plate |
+|------------------------|---------------------------------|------------------------|--------------------------|
+| ![Seen Cookies Towel](examples/videos/main/real/baseline/cookies_towel.gif) | ![Seen Left Bowl on Middle Bowl](examples/videos/main/real/baseline/left_bowl_on_middle_bowl.gif) | ![Seen Blue Cup Plate](examples/videos/main/real/baseline/blue_cup_plate.gif) | ![Seen Pull Bottom Plate](examples/videos/main/real/baseline/pull_bottom_plate.gif) |
+
+| Unseen<br> Pick Orange | Unseen<br>Banana Towel | Unseen<br>Ball Book | Unseen<br>Orange Cup Plate |
+|------------------------|------------------------|-----------------------|--------------------------|
+| ![Unseen Pick Orange](examples/videos/main/real/baseline/pick_orange.gif) | ![Unseen Banana Towel](examples/videos/main/real/baseline/banana_towel.gif) | ![Unseen Ball Book](examples/videos/main/real/baseline/ball_book.gif) | ![Unseen Orange Cup Plate](examples/videos/main/real/baseline/orange_cup_plate.gif) |
+
 **InspireVLA (Ours)**
+
+| Seen<br>Cookies Towel | Seen<br>Left Bowl on Middle Bowl | Seen<br>Blue Cup Plate | Seen<br>Pull Bottom Plate |
+|------------------------|---------------------------------|------------------------|--------------------------|
+| ![Seen Cookies Towel](examples/videos/main/real/inspire/cookies_towel.gif) | ![Seen Left Bowl on Middle Bowl](examples/videos/main/real/inspire/left_bowl_on_middle_bowl.gif) | ![Seen Blue Cup Plate](examples/videos/main/real/inspire/blue_cup_plate.gif) | ![Seen Pull Bottom Plate](examples/videos/main/real/inspire/pull_bottom_plate.gif) |
+
+| Unseen<br> Pick Orange | Unseen<br>Banana Towel | Unseen<br>Ball Book | Unseen<br>Orange Cup Plate |
+|------------------------|------------------------|-----------------------|--------------------------|
+| ![Unseen Pick Orange](examples/videos/main/real/inspire/pick_orange.gif) | ![Unseen Banana Towel](examples/videos/main/real/inspire/banana_towel.gif) | ![Unseen Ball Book](examples/videos/main/real/inspire/ball_book.gif) | ![Unseen Orange Cup Plate](examples/videos/main/real/inspire/orange_cup_plate.gif) |
 
 ## Models Checkpoints
 
@@ -63,6 +81,9 @@ Official implementation of the paper "[Think Before You Act: Vision-Language-Act
 |-------|---------|------------|
 | MiniVLA | Libero90 | [Download]() |
 | InspireVLA | Libero90 | [Download]() |
+| InspireVLA | Libero10+Goal+Object+Spatial | [Download]() |
+| FAST | Libero90 | [Download]() |
+| InspireVLA-FAST | Libero90 | [Download]() |
 
 ## Running
 
