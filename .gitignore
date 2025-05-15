@@ -6,8 +6,6 @@ results/
 pretrained/
 visualize/
 visualization/
-examples/
-examples_bak/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
