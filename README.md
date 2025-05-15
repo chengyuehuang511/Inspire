@@ -4,7 +4,7 @@ Official implementation of the paper "[Think Before You Act: Vision-Language-Act
 
 > **Note**: We are doing our best to improve this work. If you have any questions or suggestions, please feel free to create an issue in this repo or contact us at shihan.wu.koorye@outlook.com.
 
-[[InspireVLA-Fast]]()
+[[InspireVLA-FAST]]()
 
 ## News
 
