@@ -38,6 +38,8 @@ Official implementation of the paper "[InSpire: Vision-Language-Action Models wi
 
 ### Real-world Environments
 
+> **Notice**: The real-world experiment was conducted on the $\pi_0$-FAST model, and the relevant code is available at [Inspire-FAST](https://github.com/Koorye/Inspire-FAST).
+
 **InspireVLA (Ours)**
 
 | Seen<br>Cookies Towel | Seen<br>Left Bowl on Middle Bowl | Seen<br>Blue Cup Plate | Seen<br>Pull Bottom Plate |
