@@ -1,5 +1,19 @@
+dlimp @ git+https://github.com/kvablack/dlimp.git
+draccus==0.8.0
 timm==0.9.10
 tokenizers==0.19.1
 torch>=2.2.0
 torchvision>=0.16.0
 transformers==4.40.1
+imageio==2.22.0
+mediapy==1.2.2
+rich==13.9.4
+tensorboard==2.15.2
+tensorboard-data-server==0.7.2
+tensorflow==2.15.0
+tensorflow-addons==0.23.0
+tensorflow-datasets==4.9.7
+tensorflow-estimator==2.15.0
+tensorflow-graphics==2021.12.3
+tensorflow-io-gcs-filesystem==0.37.1
+tensorflow-metadata==1.16.1

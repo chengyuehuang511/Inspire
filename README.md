@@ -84,9 +84,9 @@ Official implementation of the paper "[InSpire: Vision-Language-Action Models wi
 
 | Model | Dataset | Checkpoint |
 |-------|---------|------------|
-| MiniVLA | Libero90 | [Download]() |
-| InspireVLA | Libero90 | [Download]() |
-| InspireVLA | Libero10+Goal+Object+Spatial | [Download]() |
+| MiniVLA | Libero90 | [Download](https://huggingface.co/InspireVLA/minivla-libero-90) |
+| InspireVLA | Libero90 | [Download](https://huggingface.co/InspireVLA/minivla-inspire-libero-90) |
+| InspireVLA | Libero10+Goal+Object+Spatial | [Download](https://huggingface.co/InspireVLA/minivla-inspire-libero-union4) |
 
 ## Installation
 
@@ -102,9 +102,20 @@ git clone https://github.com/Koorye/Inspire.git
 conda create -n inspire python=3.10
 conda activate inspire
 
+cd LIBERO
+pip install -r requirements.txt
+pip install -e .
+cd ..
+
+cd vq_bet_official
+pip install -r requirements.txt
+pip install -e .
+cd ..
+
 pip install torch==2.3.1 torchvision==0.18.1 torchaudio==2.3.1 --index-url https://download.pytorch.org/whl/cu118
 pip install -r requirements-min.txt
 
+# (Optional) for Flash Attention
 pip install packaging ninja
 ninja --version; echo $?  # Verify Ninja --> should return exit code "0"
 pip install "flash-attn==2.5.5" --no-build-isolation
@@ -112,11 +123,19 @@ pip install "flash-attn==2.5.5" --no-build-isolation
 
 ## Evaluation with Pretrained Checkpoints
 
-1. Download pretrained checkpoints.
+1. Create `.hf_token` file in the root directory and add your Hugging Face token.
 
-TODO
+```bash
+echo "your_huggingface_token" > .hf_token
+```
 
-2. Run the evaluation script.
+2. Download pretrained checkpoints.
+
+```bash
+bash scripts/download_pretrained_weights.sh
+```
+
+3. Run the evaluation script.
 
 ```bash
 bash vla_scripts/eval/eval_baseline_libero90.sh
