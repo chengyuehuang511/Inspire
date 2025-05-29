@@ -60,16 +60,6 @@ Official implementation of the paper "[InSpire: Vision-Language-Action Models wi
 
 ### Real-world Environments
 
-**FAST**
-
-| Seen<br>Cookies Towel | Seen<br>Left Bowl on Middle Bowl | Seen<br>Blue Cup Plate | Seen<br>Pull Bottom Plate |
-|------------------------|---------------------------------|------------------------|--------------------------|
-| ![Seen Cookies Towel](examples/videos/main/real/baseline/cookies_towel.gif) | ![Seen Left Bowl on Middle Bowl](examples/videos/main/real/baseline/left_bowl_on_middle_bowl.gif) | ![Seen Blue Cup Plate](examples/videos/main/real/baseline/blue_cup_plate.gif) | ![Seen Pull Bottom Plate](examples/videos/main/real/baseline/pull_bottom_plate.gif) |
-
-| Unseen<br> Pick Orange | Unseen<br>Banana Towel | Unseen<br>Ball Book | Unseen<br>Orange Cup Plate |
-|------------------------|------------------------|-----------------------|--------------------------|
-| ![Unseen Pick Orange](examples/videos/main/real/baseline/pick_orange.gif) | ![Unseen Banana Towel](examples/videos/main/real/baseline/banana_towel.gif) | ![Unseen Ball Book](examples/videos/main/real/baseline/ball_book.gif) | ![Unseen Orange Cup Plate](examples/videos/main/real/baseline/orange_cup_plate.gif) |
-
 **InspireVLA (Ours)**
 
 | Seen<br>Cookies Towel | Seen<br>Left Bowl on Middle Bowl | Seen<br>Blue Cup Plate | Seen<br>Pull Bottom Plate |
@@ -79,6 +69,16 @@ Official implementation of the paper "[InSpire: Vision-Language-Action Models wi
 | Unseen<br> Pick Orange | Unseen<br>Banana Towel | Unseen<br>Ball Book | Unseen<br>Orange Cup Plate |
 |------------------------|------------------------|-----------------------|--------------------------|
 | ![Unseen Pick Orange](examples/videos/main/real/inspire/pick_orange.gif) | ![Unseen Banana Towel](examples/videos/main/real/inspire/banana_towel.gif) | ![Unseen Ball Book](examples/videos/main/real/inspire/ball_book.gif) | ![Unseen Orange Cup Plate](examples/videos/main/real/inspire/orange_cup_plate.gif) |
+
+**FAST**
+
+| Seen<br>Cookies Towel | Seen<br>Left Bowl on Middle Bowl | Seen<br>Blue Cup Plate | Seen<br>Pull Bottom Plate |
+|------------------------|---------------------------------|------------------------|--------------------------|
+| ![Seen Cookies Towel](examples/videos/main/real/baseline/cookies_towel.gif) | ![Seen Left Bowl on Middle Bowl](examples/videos/main/real/baseline/left_bowl_on_middle_bowl.gif) | ![Seen Blue Cup Plate](examples/videos/main/real/baseline/blue_cup_plate.gif) | ![Seen Pull Bottom Plate](examples/videos/main/real/baseline/pull_bottom_plate.gif) |
+
+| Unseen<br> Pick Orange | Unseen<br>Banana Towel | Unseen<br>Ball Book | Unseen<br>Orange Cup Plate |
+|------------------------|------------------------|-----------------------|--------------------------|
+| ![Unseen Pick Orange](examples/videos/main/real/baseline/pick_orange.gif) | ![Unseen Banana Towel](examples/videos/main/real/baseline/banana_towel.gif) | ![Unseen Ball Book](examples/videos/main/real/baseline/ball_book.gif) | ![Unseen Orange Cup Plate](examples/videos/main/real/baseline/orange_cup_plate.gif) |
 
 ## Models Checkpoints
 
