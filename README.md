@@ -43,7 +43,7 @@ Official implementation of the paper "[InSpire: Vision-Language-Action Models wi
 **Seen Tasks**
 
 | $\pi_0$-FAST:<br>Cookies Towel | $\pi_0$-FAST:<br>Left Bowl on Middle Bowl | $\pi_0$-FAST:<br>Blue Cup Plate | $\pi_0$-FAST:<br>Pull Bottom Plate |
-|------------------------|---------------------------------|------------------------|--------------------------|
+|:------------------------:|:---------------------------------:|:------------------------:|:--------------------------:|
 | ![Seen Cookies Towel](examples/videos/main/real/baseline/cookies_towel.gif) | ![Seen Left Bowl on Middle Bowl](examples/videos/main/real/baseline/left_bowl_on_middle_bowl.gif) | ![Seen Blue Cup Plate](examples/videos/main/real/baseline/blue_cup_plate.gif) | ![Seen Pull Bottom Plate](examples/videos/main/real/baseline/pull_bottom_plate.gif) |
 | **InSpire:<br>Cookies Towel** | **InSpire:<br>Left Bowl on Middle Bowl** | **InSpire:<br>Blue Cup Plate** | **InSpire:<br>Pull Bottom Plate** |
 | ![Seen Cookies Towel](examples/videos/main/real/inspire/cookies_towel.gif) | ![Seen Left Bowl on Middle Bowl](examples/videos/main/real/inspire/left_bowl_on_middle_bowl.gif) | ![Seen Blue Cup Plate](examples/videos/main/real/inspire/blue_cup_plate.gif) | ![Seen Pull Bottom Plate](examples/videos/main/real/inspire/pull_bottom_plate.gif) |
@@ -51,7 +51,7 @@ Official implementation of the paper "[InSpire: Vision-Language-Action Models wi
 **Unseen Tasks**
 
 | $\pi_0$-FAST:<br> Pick Orange | $\pi_0$-FAST:<br>Banana Towel | $\pi_0$-FAST:<br>Ball Book | $\pi_0$-FAST:<br>Orange Cup Plate |
-|------------------------|------------------------|-----------------------|--------------------------|
+|:------------------------:|:------------------------:|:-----------------------:|:--------------------------:|
 | ![Unseen Pick Orange](examples/videos/main/real/baseline/pick_orange.gif) | ![Unseen Banana Towel](examples/videos/main/real/baseline/banana_towel.gif) | ![Unseen Ball Book](examples/videos/main/real/baseline/ball_book.gif) | ![Unseen Orange Cup Plate](examples/videos/main/real/baseline/orange_cup_plate.gif) |
 | **InSpire:<br>Pick Orange** | **InSpire:<br>Banana Towel** | **InSpire:<br>Ball Book** | **InSpire:<br>Orange Cup Plate** |
 | ![Unseen Pick Orange](examples/videos/main/real/inspire/pick_orange.gif) | ![Unseen Banana Towel](examples/videos/main/real/inspire/banana_towel.gif) | ![Unseen Ball Book](examples/videos/main/real/inspire/ball_book.gif) | ![Unseen Orange Cup Plate](examples/videos/main/real/inspire/orange_cup_plate.gif) |
