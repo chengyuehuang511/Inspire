@@ -61,7 +61,7 @@ Official implementation of the paper "[InSpire: Vision-Language-Action Models wi
 **Seen Tasks**
 
 | miniVLA:<br>Butter Drawer | miniVLA:<br>Moka Stove | miniVLA:<br>Sauce Tray | miniVLA:<br>Book Caddy |
-|----------------------------|-------------------------|-------------------------|-------------------------|
+|:----------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|
 | ![Libero-90 Butter Drawer](examples/videos/main/libero/baseline/90_butter_drawer.gif) | ![Libero-90 Moka Stove](examples/videos/main/libero/baseline/90_moka_stove.gif) | ![Libero-90 Sauce Tray](examples/videos/main/libero/baseline/90_sauce_tray.gif) | ![Libero-90 Book Caddy](examples/videos/main/libero/baseline/90_book_caddy.gif) |
 | **InSpire:<br>Butter Drawer** | **InSpire:<br>Moka Stove** | **InSpire:<br>Sauce Tray** | **InSpire:<br>Book Caddy** |
 | ![Libero-90 Butter Drawer](examples/videos/main/libero/inspire/90_butter_drawer.gif) | ![Libero-90 Moka Stove](examples/videos/main/libero/inspire/90_moka_stove.gif) | ![Libero-90 Sauce Tray](examples/videos/main/libero/inspire/90_sauce_tray.gif) | ![Libero-90 Book Caddy](examples/videos/main/libero/inspire/90_book_caddy.gif) |
@@ -70,7 +70,7 @@ Official implementation of the paper "[InSpire: Vision-Language-Action Models wi
 **Unseen Tasks**
 
 | miniVLA:<br>Bowl Plate | miniVLA:<br>Cheese Basket | miniVLA:<br>Bowl Plate | miniVLA:<br>Book Caddy |
-|----------------------------|------------------------------|---------------------------|-------------------------|
+|:----------------------------:|:------------------------------:|:---------------------------:|:-------------------------:|
 | ![Libero-Goal Bowl Plate](examples/videos/main/libero/baseline/goal_bowl_plate.gif) | ![Libero-Object Cheese Basket](examples/videos/main/libero/baseline/object_cheese_basket.gif) | ![Libero-Spatial Bowl Plate](examples/videos/main/libero/baseline/spatial_bowl_plate.gif) | ![Libero-10 Book Caddy](examples/videos/main/libero/baseline/10_book_caddy.gif) |
 | **InSpire:<br>Bowl Plate** | **InSpire:<br>Cheese Basket** | **InSpire:<br>Bowl Plate** | **InSpire:<br>Book Caddy** |
 | ![Libero-Goal Bowl Plate](examples/videos/main/libero/inspire/goal_bowl_plate.gif) | ![Libero-Object Cheese Basket](examples/videos/main/libero/inspire/object_cheese_basket.gif) | ![Libero-Spatial Bowl Plate](examples/videos/main/libero/inspire/spatial_bowl_plate.gif) | ![Libero-10 Book Caddy](examples/videos/main/libero/inspire/10_book_caddy.gif) |
