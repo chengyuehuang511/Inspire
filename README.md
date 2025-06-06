@@ -38,48 +38,41 @@ Official implementation of the paper "[InSpire: Vision-Language-Action Models wi
 
 ### Real-world Environments
 
-> **Notice**: The real-world experiment was conducted on the $\pi_0$-FAST model, and the relevant code is available at [Inspire-FAST](https://github.com/Koorye/Inspire-FAST).
+> **Note**: The real-world experiment was conducted on the $\pi_0$-FAST model, and the relevant code is available at [Inspire-FAST](https://github.com/Koorye/Inspire-FAST).
 
-**InspireVLA (Ours)**
+**Seen Tasks**
 
-| Seen<br>Cookies Towel | Seen<br>Left Bowl on Middle Bowl | Seen<br>Blue Cup Plate | Seen<br>Pull Bottom Plate |
-|------------------------|---------------------------------|------------------------|--------------------------|
-| ![Seen Cookies Towel](examples/videos/main/real/inspire/cookies_towel.gif) | ![Seen Left Bowl on Middle Bowl](examples/videos/main/real/inspire/left_bowl_on_middle_bowl.gif) | ![Seen Blue Cup Plate](examples/videos/main/real/inspire/blue_cup_plate.gif) | ![Seen Pull Bottom Plate](examples/videos/main/real/inspire/pull_bottom_plate.gif) |
-
-| Unseen<br> Pick Orange | Unseen<br>Banana Towel | Unseen<br>Ball Book | Unseen<br>Orange Cup Plate |
-|------------------------|------------------------|-----------------------|--------------------------|
-| ![Unseen Pick Orange](examples/videos/main/real/inspire/pick_orange.gif) | ![Unseen Banana Towel](examples/videos/main/real/inspire/banana_towel.gif) | ![Unseen Ball Book](examples/videos/main/real/inspire/ball_book.gif) | ![Unseen Orange Cup Plate](examples/videos/main/real/inspire/orange_cup_plate.gif) |
-
-**FAST**
-
-| Seen<br>Cookies Towel | Seen<br>Left Bowl on Middle Bowl | Seen<br>Blue Cup Plate | Seen<br>Pull Bottom Plate |
+| $\pi_0$-FAST:<br>Cookies Towel | $\pi_0$-FAST:<br>Left Bowl on Middle Bowl | $\pi_0$-FAST:<br>Blue Cup Plate | $\pi_0$-FAST:<br>Pull Bottom Plate |
 |------------------------|---------------------------------|------------------------|--------------------------|
 | ![Seen Cookies Towel](examples/videos/main/real/baseline/cookies_towel.gif) | ![Seen Left Bowl on Middle Bowl](examples/videos/main/real/baseline/left_bowl_on_middle_bowl.gif) | ![Seen Blue Cup Plate](examples/videos/main/real/baseline/blue_cup_plate.gif) | ![Seen Pull Bottom Plate](examples/videos/main/real/baseline/pull_bottom_plate.gif) |
+| **InSpire:<br>Cookies Towel** | **InSpire:<br>Left Bowl on Middle Bowl** | **InSpire:<br>Blue Cup Plate** | **InSpire:<br>Pull Bottom Plate** |
+| ![Seen Cookies Towel](examples/videos/main/real/inspire/cookies_towel.gif) | ![Seen Left Bowl on Middle Bowl](examples/videos/main/real/inspire/left_bowl_on_middle_bowl.gif) | ![Seen Blue Cup Plate](examples/videos/main/real/inspire/blue_cup_plate.gif) | ![Seen Pull Bottom Plate](examples/videos/main/real/inspire/pull_bottom_plate.gif) |
 
-| Unseen<br> Pick Orange | Unseen<br>Banana Towel | Unseen<br>Ball Book | Unseen<br>Orange Cup Plate |
+**Unseen Tasks**
+
+| $\pi_0$-FAST:<br> Pick Orange | $\pi_0$-FAST:<br>Banana Towel | $\pi_0$-FAST:<br>Ball Book | $\pi_0$-FAST:<br>Orange Cup Plate |
 |------------------------|------------------------|-----------------------|--------------------------|
 | ![Unseen Pick Orange](examples/videos/main/real/baseline/pick_orange.gif) | ![Unseen Banana Towel](examples/videos/main/real/baseline/banana_towel.gif) | ![Unseen Ball Book](examples/videos/main/real/baseline/ball_book.gif) | ![Unseen Orange Cup Plate](examples/videos/main/real/baseline/orange_cup_plate.gif) |
+| **InSpire:<br>Pick Orange** | **InSpire:<br>Banana Towel** | **InSpire:<br>Ball Book** | **InSpire:<br>Orange Cup Plate** |
+| ![Unseen Pick Orange](examples/videos/main/real/inspire/pick_orange.gif) | ![Unseen Banana Towel](examples/videos/main/real/inspire/banana_towel.gif) | ![Unseen Ball Book](examples/videos/main/real/inspire/ball_book.gif) | ![Unseen Orange Cup Plate](examples/videos/main/real/inspire/orange_cup_plate.gif) |
 
 ### Simulated Environments
 
-**MiniVLA**
+**Seen Tasks**
 
-| Libero-90<br>Butter Drawer | Libero-90<br>Moka Stove | Libero-90<br>Sauce Tray | Libero-90<br>Book Caddy |
+| miniVLA:<br>Butter Drawer | miniVLA:<br>Moka Stove | miniVLA:<br>Sauce Tray | miniVLA:<br>Book Caddy |
 |----------------------------|-------------------------|-------------------------|-------------------------|
 | ![Libero-90 Butter Drawer](examples/videos/main/libero/baseline/90_butter_drawer.gif) | ![Libero-90 Moka Stove](examples/videos/main/libero/baseline/90_moka_stove.gif) | ![Libero-90 Sauce Tray](examples/videos/main/libero/baseline/90_sauce_tray.gif) | ![Libero-90 Book Caddy](examples/videos/main/libero/baseline/90_book_caddy.gif) |
-
-| Libero-Goal<br>Bowl Plate | Libero-Object<br>Cheese Basket | Libero-Spatial<br>Bowl Plate | Libero-10<br>Book Caddy |
-|----------------------------|------------------------------|---------------------------|-------------------------|
-| ![Libero-Goal Bowl Plate](examples/videos/main/libero/baseline/goal_bowl_plate.gif) | ![Libero-Object Cheese Basket](examples/videos/main/libero/baseline/object_cheese_basket.gif) | ![Libero-Spatial Bowl Plate](examples/videos/main/libero/baseline/spatial_bowl_plate.gif) | ![Libero-10 Book Caddy](examples/videos/main/libero/baseline/10_book_caddy.gif) |
-
-**InspireVLA (Ours)**
-
-| Libero-90<br>Butter Drawer | Libero-90<br>Moka Stove | Libero-90<br>Sauce Tray | Libero-90<br>Book Caddy |
-|----------------------------|-------------------------|-------------------------|-------------------------|
+| **InSpire:<br>Butter Drawer** | **InSpire:<br>Moka Stove** | **InSpire:<br>Sauce Tray** | **InSpire:<br>Book Caddy** |
 | ![Libero-90 Butter Drawer](examples/videos/main/libero/inspire/90_butter_drawer.gif) | ![Libero-90 Moka Stove](examples/videos/main/libero/inspire/90_moka_stove.gif) | ![Libero-90 Sauce Tray](examples/videos/main/libero/inspire/90_sauce_tray.gif) | ![Libero-90 Book Caddy](examples/videos/main/libero/inspire/90_book_caddy.gif) |
 
-| Libero-Goal<br>Bowl Plate | Libero-Object<br>Cheese Basket | Libero-Spatial<br>Bowl Plate | Libero-10<br>Book Caddy |
+
+**Unseen Tasks**
+
+| miniVLA:<br>Bowl Plate | miniVLA:<br>Cheese Basket | miniVLA:<br>Bowl Plate | miniVLA:<br>Book Caddy |
 |----------------------------|------------------------------|---------------------------|-------------------------|
+| ![Libero-Goal Bowl Plate](examples/videos/main/libero/baseline/goal_bowl_plate.gif) | ![Libero-Object Cheese Basket](examples/videos/main/libero/baseline/object_cheese_basket.gif) | ![Libero-Spatial Bowl Plate](examples/videos/main/libero/baseline/spatial_bowl_plate.gif) | ![Libero-10 Book Caddy](examples/videos/main/libero/baseline/10_book_caddy.gif) |
+| **InSpire:<br>Bowl Plate** | **InSpire:<br>Cheese Basket** | **InSpire:<br>Bowl Plate** | **InSpire:<br>Book Caddy** |
 | ![Libero-Goal Bowl Plate](examples/videos/main/libero/inspire/goal_bowl_plate.gif) | ![Libero-Object Cheese Basket](examples/videos/main/libero/inspire/object_cheese_basket.gif) | ![Libero-Spatial Bowl Plate](examples/videos/main/libero/inspire/spatial_bowl_plate.gif) | ![Libero-10 Book Caddy](examples/videos/main/libero/inspire/10_book_caddy.gif) |
 
 ## Models Checkpoints
