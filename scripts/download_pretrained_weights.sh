@@ -4,7 +4,7 @@ mkdir pretrained/
 cd pretrained/
 
 current_dir=$(pwd)
-cd ~/.cache/huggingface/hub
+cd /nethome/chuang475/flash/.cache/huggingface/hub
 huggingface_cache_dir=$(pwd)
 cd $current_dir
 
@@ -19,7 +19,7 @@ mkdir runs
 cd runs/
 
 current_dir=$(pwd)
-cd ~/.cache/huggingface/hub
+cd /nethome/chuang475/flash/.cache/huggingface/hub
 huggingface_cache_dir=$(pwd)
 cd $current_dir
 
@@ -39,7 +39,7 @@ mkdir pretrained/
 cd pretrained/
 
 current_dir=$(pwd)
-cd ~/.cache/huggingface/hub
+cd /nethome/chuang475/flash/.cache/huggingface/hub
 huggingface_cache_dir=$(pwd)
 cd $current_dir
 
@@ -51,7 +51,7 @@ fi
 cd ..
 
 current_dir=$(pwd)
-cd ~/.cache/huggingface/hub
+cd /nethome/chuang475/flash/.cache/huggingface/hub
 huggingface_cache_dir=$(pwd)
 cd $current_dir
 

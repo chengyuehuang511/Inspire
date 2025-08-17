@@ -329,7 +329,7 @@ class ParallelLiberoEvaluator:
     def _set_results(self):
         self.save_dir = os.path.join(self.cfg.save_root, 
                                      f'{self.cfg.task_suite_name}-{self.cfg.model_family}', 
-                                     f'step_{self.cfg.load_step}-vqa_{self.cfg.with_vqa}')
+                                     f'step_{self.cfg.load_step}-vqa_{self.cfg.with_vqa}_center_crop_{self.cfg.center_crop}_num-trials-per-task_{self.cfg.num_trials_per_task}')
         os.makedirs(self.save_dir, exist_ok=True)
     
     def _build_logger(self, mode='w'):
@@ -423,7 +423,7 @@ def main(args):
         cfg = GenerateConfig(
             load_step=step, 
             pretrained_checkpoint=args.pretrained_checkpoint,
-            num_trials_per_task=args.num_trails_per_task,
+            num_trials_per_task=args.num_trials_per_task,
             num_gpus=args.num_gpus,
             num_processes=args.num_processes,
             task_suite_name=args.task_suite_name,
@@ -431,6 +431,7 @@ def main(args):
             with_vqa=str_to_bool(args.with_vqa),
             check_catch=str_to_bool(args.check_catch),
             check_close=str_to_bool(args.check_close),
+            center_crop=str_to_bool(args.center_crop),
             vqa_mode=args.vqa_mode,
             obs_history=args.obs_history,
             use_wrist_image=args.use_wrist_image,
@@ -444,7 +445,7 @@ if __name__ == '__main__':
     parser.add_argument('--num-gpus', type=int, default=8)
     parser.add_argument('--num-processes', type=int, default=32)
     parser.add_argument('--task-suite-name', default='libero_90')
-    parser.add_argument('--num-trails-per-task', type=int, default=10)
+    parser.add_argument('--num-trials-per-task', type=int, default=10)
     parser.add_argument('--pretrained-checkpoint', default='')
     parser.add_argument('--save-root', default='./results')
     parser.add_argument('--with-vqa', type=str, default='False')
@@ -454,5 +455,6 @@ if __name__ == '__main__':
     parser.add_argument('--steps', nargs='+', type=int)
     parser.add_argument('--obs-history', type=int, default=1)
     parser.add_argument('--use-wrist-image', action='store_true')
+    parser.add_argument('--center-crop', type=str, default='True')
     args = parser.parse_args()
     main(args)

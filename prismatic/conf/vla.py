@@ -145,15 +145,42 @@ class Exp_Qwen25_DinoSigLIP_224px_0_5B_OXE_Magic_Soup(Exp_SigLIP_224px_Bridge):
     per_device_batch_size: int = 12
 
 
+# = [8 GPU] Qwen2.5 0.5B SigLIP 224px + OXE Magic Soup =
+@dataclass
+class Exp_Qwen25_DinoSigLIP_224px_0_5B_OXE_Magic_Soup_VQ(Exp_SigLIP_224px_Bridge):
+    vla_id: str = "prism-qwen25-dinosiglip-224px+0_5b+mx-oxe-magic-soup"
+    base_vlm: Union[str, Path] = "pretrained/prism-qwen25-extra-dinosiglip-224px-0_5b"
+
+    data_mix: str = "oxe_magic_soup"
+    action_tokenizer: str = "libero_vq_extra_action_tokenizer"
+
+    expected_world_size: int = 8
+    global_batch_size: int = 96
+    per_device_batch_size: int = 12
+
+
 @dataclass
 class Exp_Qwen25_DinoSigLIP_224px_0_5B_LIBERO_90(Exp_Qwen25_DinoSigLIP_224px_0_5B_OXE_Magic_Soup):
     vla_id: str = "prism-qwen25-dinosiglip-224px+0_5b+mx-libero-90"
 
     data_mix: str = "libero_90"
 
-    expected_world_size: int = 4
+    expected_world_size: int = 8
     global_batch_size: int = 128
-    per_device_batch_size: int = 32
+    per_device_batch_size: int = 16
+    max_steps: int = 122500
+
+
+@dataclass
+class Exp_Qwen25_DinoSigLIP_224px_0_5B_LIBERO_90_VQ(Exp_Qwen25_DinoSigLIP_224px_0_5B_OXE_Magic_Soup_VQ):
+    vla_id: str = "prism-qwen25-dinosiglip-224px+0_5b+mx-libero-90+vq"
+
+    data_mix: str = "libero_90"
+
+    expected_world_size: int = 8
+    global_batch_size: int = 128
+    per_device_batch_size: int = 16
+    max_steps: int = 50000
 
 
 class Exp_Qwen25_DinoSigLIP_224px_0_5B_LIBERO_Object(Exp_Qwen25_DinoSigLIP_224px_0_5B_OXE_Magic_Soup):
@@ -370,6 +397,7 @@ class VLARegistry(Enum):
     # [OpenVLA 0.5B] Qwen backbones
     QWEN25_DINOSIGLIP_224PX_0_5B_MX_OXE_MAGIC_SOUP = Exp_Qwen25_DinoSigLIP_224px_0_5B_OXE_Magic_Soup
     QWEN25_DINOSIGLIP_224PX_0_5B_LIBERO_90 = Exp_Qwen25_DinoSigLIP_224px_0_5B_LIBERO_90
+    QWEN25_DINOSIGLIP_224PX_0_5B_LIBERO_90_VQ = Exp_Qwen25_DinoSigLIP_224px_0_5B_LIBERO_90_VQ
     QWEN25_DINOSIGLIP_224PX_T2_0_5B_LIBERO_90 = Exp_Qwen25_DinoSigLIP_224px_T2_0_5B_LIBERO_90
     QWEN25_DINOSIGLIP_224PX_WRIST_0_5B_LIBERO_90 = Exp_Qwen25_DinoSigLIP_224px_wrist_0_5B_LIBERO_90
 

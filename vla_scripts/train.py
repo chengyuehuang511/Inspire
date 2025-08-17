@@ -73,7 +73,7 @@ class TrainConfig:
     # Run Arguments
     run_id: Optional[str] = None                                    # Run ID for logging, Weights & Biases
     run_id_note: Optional[str] = None                               # Extra note for logging, Weights & Biases
-    max_steps: int = 50000
+    # max_steps: int = 122500
     save_interval: int = 2500                                       # Interval for saving checkpoints (in steps)
     image_aug: bool = False                                         # Whether to enable image augmentations
     seed: int = 7                                                   # Random seed (for reproducibility)
@@ -89,6 +89,7 @@ class TrainConfig:
     def __post_init__(self) -> None:
         """Lift optimization parameters from `self.vla` for ease of use =>> validate on `expected_world_size`"""
         self.epochs = self.vla.epochs
+        self.max_steps = self.vla.max_steps
         self.global_batch_size = self.vla.global_batch_size
         self.per_device_batch_size = self.vla.per_device_batch_size
 

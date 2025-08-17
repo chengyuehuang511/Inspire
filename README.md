@@ -107,13 +107,15 @@ pip install -r requirements.txt
 pip install -e .
 cd ..
 
-pip install torch==2.3.1 torchvision==0.18.1 torchaudio==2.3.1 --index-url https://download.pytorch.org/whl/cu118
+# pip install torch==2.3.1 torchvision==0.18.1 torchaudio==2.3.1 --index-url https://download.pytorch.org/whl/cu118
+pip install torch==2.5.1 torchvision==0.20.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu121
 pip install -r requirements-min.txt
 
 # (Optional) for Flash Attention
 pip install packaging ninja
 ninja --version; echo $?  # Verify Ninja --> should return exit code "0"
-pip install "flash-attn==2.5.5" --no-build-isolation
+# pip install "flash-attn==2.5.5" --no-build-isolation
+pip install "flash-attn==2.7.4.post1" --no-build-isolation
 ```
 
 ## Evaluation with Pretrained Checkpoints
