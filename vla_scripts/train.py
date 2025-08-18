@@ -98,6 +98,7 @@ class TrainConfig:
         self.max_grad_norm = self.vla.max_grad_norm
         self.lr_scheduler_type = self.vla.lr_scheduler_type
         self.warmup_ratio = self.vla.warmup_ratio
+        self.optimizer = self.vla.optimizer
 
         self.train_strategy = self.vla.train_strategy
         self.save_every_n_steps = self.vla.save_every_n_steps
@@ -242,6 +243,7 @@ def train(cfg: TrainConfig) -> None:
         max_grad_norm=cfg.max_grad_norm,
         lr_scheduler_type=cfg.lr_scheduler_type,
         warmup_ratio=cfg.warmup_ratio,
+        optimizer=cfg.optimizer,
         enable_gradient_checkpointing=cfg.vla.enable_gradient_checkpointing,
         enable_mixed_precision_training=cfg.vla.enable_mixed_precision_training,
         reduce_in_full_precision=cfg.vla.reduce_in_full_precision,

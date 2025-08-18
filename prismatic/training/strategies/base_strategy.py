@@ -46,6 +46,7 @@ class TrainingStrategy(ABC):
         max_grad_norm: float,
         lr_scheduler_type: str,
         warmup_ratio: float,
+        optimizer: str = "AdamW",
         enable_gradient_checkpointing: bool = True,
         enable_mixed_precision_training: bool = True,
         reduce_in_full_precision: bool = False,
@@ -77,7 +78,7 @@ class TrainingStrategy(ABC):
         self.worker_init_fn = worker_init_fn
 
         # Optimizers & Scheduler (initialized in `run_setup`)
-        self.optimizer, self.lr_scheduler = None, None
+        self.optimizer, self.lr_scheduler = optimizer, None
 
         # how often to save checkpoints
         self.save_every_n_steps = save_every_n_steps

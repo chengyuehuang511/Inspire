@@ -52,6 +52,8 @@ class VLAConfig(ChoiceRegistry):
     image_sequence_len: int
     use_wrist_image: bool
 
+    optimizer: str = "AdamW"                        # Optimizer to use (default: "AdamW")
+
     # Enable Gradient/Activation Checkpointing (for the LLM Backbone)
     enable_gradient_checkpointing: bool = True      # Enable Gradient/Activation Checkpointing during Training
 
@@ -181,6 +183,25 @@ class Exp_Qwen25_DinoSigLIP_224px_0_5B_LIBERO_90_VQ(Exp_Qwen25_DinoSigLIP_224px_
     global_batch_size: int = 128
     per_device_batch_size: int = 16
     max_steps: int = 50000
+
+# SPD
+@dataclass
+class Exp_Qwen25_DinoSigLIP_224px_0_5B_LIBERO_90_VQ_SPD_1(Exp_Qwen25_DinoSigLIP_224px_0_5B_LIBERO_90_VQ):
+    vla_id: str = "prism-qwen25-dinosiglip-224px+0_5b+mx-libero-90+vq+spd_1"
+    optimizer: str = "SPD"
+    weight_decay: float = 1.0
+
+@dataclass
+class Exp_Qwen25_DinoSigLIP_224px_0_5B_LIBERO_90_VQ_SPD_2(Exp_Qwen25_DinoSigLIP_224px_0_5B_LIBERO_90_VQ):
+    vla_id: str = "prism-qwen25-dinosiglip-224px+0_5b+mx-libero-90+vq+spd_2"
+    optimizer: str = "SPD"
+    weight_decay: float = 2.0
+
+@dataclass
+class Exp_Qwen25_DinoSigLIP_224px_0_5B_LIBERO_90_VQ_SPD_3(Exp_Qwen25_DinoSigLIP_224px_0_5B_LIBERO_90_VQ):
+    vla_id: str = "prism-qwen25-dinosiglip-224px+0_5b+mx-libero-90+vq+spd_3"
+    optimizer: str = "SPD"
+    weight_decay: float = 3.0
 
 
 class Exp_Qwen25_DinoSigLIP_224px_0_5B_LIBERO_Object(Exp_Qwen25_DinoSigLIP_224px_0_5B_OXE_Magic_Soup):
@@ -398,6 +419,9 @@ class VLARegistry(Enum):
     QWEN25_DINOSIGLIP_224PX_0_5B_MX_OXE_MAGIC_SOUP = Exp_Qwen25_DinoSigLIP_224px_0_5B_OXE_Magic_Soup
     QWEN25_DINOSIGLIP_224PX_0_5B_LIBERO_90 = Exp_Qwen25_DinoSigLIP_224px_0_5B_LIBERO_90
     QWEN25_DINOSIGLIP_224PX_0_5B_LIBERO_90_VQ = Exp_Qwen25_DinoSigLIP_224px_0_5B_LIBERO_90_VQ
+    QWEN25_DINOSIGLIP_224PX_0_5B_LIBERO_90_VQ_SPD_1 = Exp_Qwen25_DinoSigLIP_224px_0_5B_LIBERO_90_VQ_SPD_1
+    QWEN25_DINOSIGLIP_224PX_0_5B_LIBERO_90_VQ_SPD_2 = Exp_Qwen25_DinoSigLIP_224px_0_5B_LIBERO_90_VQ_SPD_2
+    QWEN25_DINOSIGLIP_224PX_0_5B_LIBERO_90_VQ_SPD_3 = Exp_Qwen25_DinoSigLIP_224px_0_5B_LIBERO_90_VQ_SPD_3
     QWEN25_DINOSIGLIP_224PX_T2_0_5B_LIBERO_90 = Exp_Qwen25_DinoSigLIP_224px_T2_0_5B_LIBERO_90
     QWEN25_DINOSIGLIP_224PX_WRIST_0_5B_LIBERO_90 = Exp_Qwen25_DinoSigLIP_224px_wrist_0_5B_LIBERO_90
 

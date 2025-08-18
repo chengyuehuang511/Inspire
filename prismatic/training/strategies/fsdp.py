@@ -27,6 +27,8 @@ from torch.distributed.fsdp import (
 )
 from torch.distributed.fsdp import FullyShardedDataParallel as FSDP
 from torch.optim import AdamW
+import copy
+from prismatic.training.optimizers import SPD
 from transformers.optimization import get_constant_schedule, get_cosine_schedule_with_warmup
 
 from prismatic.models.vlms import PrismaticVLM
@@ -52,6 +54,7 @@ class FSDPStrategy(TrainingStrategy):
         max_grad_norm: float,
         lr_scheduler_type: str,
         warmup_ratio: float,
+        optimizer: str = "AdamW",
         enable_gradient_checkpointing: bool = True,
         enable_mixed_precision_training: bool = True,
         reduce_in_full_precision: bool = False,
@@ -74,6 +77,7 @@ class FSDPStrategy(TrainingStrategy):
             max_grad_norm=max_grad_norm,
             lr_scheduler_type=lr_scheduler_type,
             warmup_ratio=warmup_ratio,
+            optimizer=optimizer,
             enable_gradient_checkpointing=enable_gradient_checkpointing,
             enable_mixed_precision_training=enable_mixed_precision_training,
             reduce_in_full_precision=reduce_in_full_precision,
@@ -215,9 +219,18 @@ class FSDPStrategy(TrainingStrategy):
 
             # Build Parameter Groups
             groups = [{"params": decay, "weight_decay": self.weight_decay}, {"params": no_decay, "weight_decay": 0.0}]
+            if self.optimizer != "AdamW":
+                decay_params_anchor = copy.deepcopy(decay)
+                no_decay_params_anchor = copy.deepcopy(no_decay)
+                # put decay_params_anchor and no_decay_params_anchor to cpu
+                # for p in decay_params_anchor + no_decay_params_anchor:
+                #     p.data = p.data.cpu()
+                groups[0]["pre"] = decay_params_anchor
+                groups[1]["pre"] = no_decay_params_anchor
 
             # Create Optimizer & LR Scheduler
-            self.optimizer = AdamW(groups, lr=self.learning_rate)
+            self.optimizer = eval(self.optimizer)(groups, lr=self.learning_rate)
+            print("Optimizer:", self.optimizer)
             self.lr_scheduler = get_cosine_schedule_with_warmup(self.optimizer, num_warmup_steps, num_training_steps)
             for param_group in self.optimizer.param_groups:
                 param_group["lr"] = 0.0
@@ -240,9 +253,18 @@ class FSDPStrategy(TrainingStrategy):
 
             # Build Parameter Groups
             groups = [{"params": decay, "weight_decay": self.weight_decay}, {"params": no_decay, "weight_decay": 0.0}]
+            if self.optimizer != "AdamW":
+                decay_params_anchor = copy.deepcopy(decay)
+                no_decay_params_anchor = copy.deepcopy(no_decay)
+                # put decay_params_anchor and no_decay_params_anchor to cpu
+                # for p in decay_params_anchor + no_decay_params_anchor:
+                #     p.data = p.data.cpu()
+                groups[0]["pre"] = decay_params_anchor
+                groups[1]["pre"] = no_decay_params_anchor
 
             # Create Optimizer & LR Scheduler
-            self.optimizer = AdamW(groups, lr=self.learning_rate)
+            self.optimizer = eval(self.optimizer)(groups, lr=self.learning_rate)
+            print("Optimizer:", self.optimizer)
             self.lr_scheduler = get_constant_schedule(self.optimizer)
 
         else:

@@ -6,6 +6,7 @@
 #SBATCH --gpus-per-node="a40:8"
 #SBATCH --qos="long"
 #SBATCH --mem-per-gpu=45G
+#SBATCH -x xaea-12
 
 export HOME="/coc/testnvme/chuang475"
 export CONDA_BASE_PATH="${HOME}/miniconda3"
@@ -22,11 +23,11 @@ srun -u ${PYTHON_BIN} -m torch.distributed.run \
   --nnodes=1 \
   --nproc_per_node=8 \
   vla_scripts/train.py \
-  --vla.type "prism-qwen25-dinosiglip-224px+0_5b+mx-libero-90" \
+  --vla.type "prism-qwen25-dinosiglip-224px+0_5b+mx-libero-90+vq+spd_3" \
   --data_root_dir "data/modified_libero_rlds" \
   --run_root_dir runs/$name \
-  --wandb_project "prism-qwen25-dinosiglip-224px+0_5b+mx-libero-90" \
+  --wandb_project "prism-qwen25-dinosiglip-224px+0_5b+mx-libero-90+vq+spd_3" \
   --wandb_entity "chuang475-georgia-institute-of-technology" \
-  --pretrained_checkpoint "runs/baseline/prism-qwen25-dinosiglip-224px+0_5b+mx-libero-90+n1+b16+x7/checkpoints/step-107500-epoch-23-loss=0.1219.pt" \
-  --resume_step 107500 \
-  --resume_epoch 23 \
+  # --pretrained_checkpoint "runs/baseline/prism-qwen25-dinosiglip-224px+0_5b+mx-libero-90+n1+b16+x7/checkpoints/step-107500-epoch-23-loss=0.1219.pt" \
+  # --resume_step 107500 \
+  # --resume_epoch 23 \
