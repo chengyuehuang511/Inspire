@@ -203,6 +203,11 @@ class Exp_Qwen25_DinoSigLIP_224px_0_5B_LIBERO_90_VQ_SPD_3(Exp_Qwen25_DinoSigLIP_
     optimizer: str = "SPD"
     weight_decay: float = 3.0
 
+@dataclass
+class Exp_Qwen25_DinoSigLIP_224px_0_5B_LIBERO_90_VQ_SPD_10(Exp_Qwen25_DinoSigLIP_224px_0_5B_LIBERO_90_VQ):
+    vla_id: str = "prism-qwen25-dinosiglip-224px+0_5b+mx-libero-90+vq+spd_10"
+    optimizer: str = "SPD"
+    weight_decay: float = 10.0
 
 class Exp_Qwen25_DinoSigLIP_224px_0_5B_LIBERO_Object(Exp_Qwen25_DinoSigLIP_224px_0_5B_OXE_Magic_Soup):
     vla_id: str = "prism-qwen25-dinosiglip-224px+0_5b+mx-libero-object"
@@ -422,6 +427,7 @@ class VLARegistry(Enum):
     QWEN25_DINOSIGLIP_224PX_0_5B_LIBERO_90_VQ_SPD_1 = Exp_Qwen25_DinoSigLIP_224px_0_5B_LIBERO_90_VQ_SPD_1
     QWEN25_DINOSIGLIP_224PX_0_5B_LIBERO_90_VQ_SPD_2 = Exp_Qwen25_DinoSigLIP_224px_0_5B_LIBERO_90_VQ_SPD_2
     QWEN25_DINOSIGLIP_224PX_0_5B_LIBERO_90_VQ_SPD_3 = Exp_Qwen25_DinoSigLIP_224px_0_5B_LIBERO_90_VQ_SPD_3
+    QWEN25_DINOSIGLIP_224PX_0_5B_LIBERO_90_VQ_SPD_10 = Exp_Qwen25_DinoSigLIP_224px_0_5B_LIBERO_90_VQ_SPD_10
     QWEN25_DINOSIGLIP_224PX_T2_0_5B_LIBERO_90 = Exp_Qwen25_DinoSigLIP_224px_T2_0_5B_LIBERO_90
     QWEN25_DINOSIGLIP_224PX_WRIST_0_5B_LIBERO_90 = Exp_Qwen25_DinoSigLIP_224px_wrist_0_5B_LIBERO_90
 

@@ -21,16 +21,18 @@ cd /coc/testnvme/chuang475/projects/Inspire
 num_gpus=8
 num_processes=32
 task_suite_names=(
-    "libero_90"
-    # "libero_goal"
-    # "libero_object"
-    # "libero_spatial"
-    # "libero_10"
+    # "libero_90"
+    "libero_goal"
+    "libero_object"
+    "libero_spatial"
+    "libero_10"
 )
 
 # name=minivla-libero-90
 # name=minivla-libero90-prismatic
 name="baseline/prism-qwen25-dinosiglip-224px+0_5b+mx-libero-90+vq+n1+b16+x7"
+# name="baseline/prism-qwen25-dinosiglip-224px+0_5b+mx-libero-90+n1+b16+x7"
+# name="baseline/prism-qwen25-dinosiglip-224px+0_5b+mx-libero-90+vq+spd_3+n1+b16+x7"
 steps="50000"
 # steps="122500"
 
@@ -44,5 +46,5 @@ for task_suite_name in "${task_suite_names[@]}"; do
         --save-root results/$name \
         --with-vqa false \
         --steps $steps \
-        --center-crop true
+        --center-crop false
 done

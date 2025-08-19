@@ -12,7 +12,7 @@ from prismatic.util.data_utils import PaddedCollatorForActionPrediction
 from transformers.models.qwen2.tokenization_qwen2_fast import Qwen2TokenizerFast
 
 
-_OBJECT_INFO_ROOT = '/path/to/data_root/object_infos'
+_OBJECT_INFO_ROOT = 'data/modified_libero_rlds'
 IGNORE_INDEX = -100
 
 _OBJECT_NAME_MAP = OrderedDict()
@@ -337,7 +337,7 @@ class RLDSBatchTransformWithVQA(RLDSBatchTransform):
         obj_info_id = rlds_batch["object_info"].decode('utf-8')
 
         if 'union' not in self.name:
-            object_info_dir = f'{_OBJECT_INFO_ROOT}/{self.name}_no_noops/object_infos'
+            object_info_dir = f'{_OBJECT_INFO_ROOT}/{self.name}/object_infos'
         else:
             object_info_dir = _OBJECT_INFO_ROOT.replace('object_infos', 'merged_object_infos')
             
